@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[НАЗВАНИЕ СЕРВИСА] — Автосервис в Астана</title>
+<meta name="description" content="[НАЗВАНИЕ СЕРВИСА] — профессиональный ремонт автомобилей в Астана. Диагностика, ремонт двигателя, ходовой, АКПП. Гарантия [XX] месяцев. Запись в WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* =============================================
+   DESIGN SYSTEM
+   Charcoal #0E1419 · Orange #FF5A1F · White
+   Auto / Industrial / Trust
+============================================= */
+:root{
+  --dark:#0E1419;
+  --dark-2:#151D24;
+  --dark-3:#1C2630;
+  --dark-4:#243040;
+  --orange:#FF5A1F;
+  --orange-h:#E84800;
+  --white:#FFFFFF;
+  --off-white:#F5F6F8;
+  --text:#1A2332;
+  --muted:#5A6A7A;
+  --border:#E2E8EF;
+  --border-dark:rgba(255,255,255,0.08);
+  --r-xl:20px;
+  --r-lg:14px;
+  --r-md:10px;
+  --shadow:0 4px 20px rgba(0,0,0,0.08);
+  --shadow-h:0 16px 40px rgba(0,0,0,0.14);
+  --shadow-or:0 8px 24px rgba(255,90,31,0.35);
+  --max:1180px;
+  --sec:88px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+.container{max-width:var(--max);margin:0 auto;padding:0 24px;}
+.sec{padding:var(--sec) 0;}
+.sec-dark{background:var(--dark);}
+.sec-soft{background:var(--off-white);}
+
+/* EYEBROW */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--orange);margin-bottom:14px;
+}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--orange);border-radius:1px;}
+
+/* TITLES */
+.sec-title{
+  font-size:clamp(26px,3.6vw,40px);font-weight:800;
+  letter-spacing:-.02em;line-height:1.12;
+  color:var(--dark);margin-bottom:14px;
+}
+.sec-title.wh{color:var(--white);}
+.sec-sub{font-size:16px;color:var(--muted);max-width:520px;line-height:1.65;}
+.sec-sub.wh{color:rgba(255,255,255,0.5);}
+.sec-head{text-align:center;}
+.sec-head .sec-sub{margin:0 auto 48px;}
+
+/* BUTTONS */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:15px 28px;border-radius:100px;
+  font-size:15px;font-weight:700;
+  white-space:nowrap;transition:all .2s ease;
+}
+.btn svg{width:18px;height:18px;flex-shrink:0;}
+.btn-or{background:var(--orange);color:#fff;box-shadow:var(--shadow-or);}
+.btn-or:hover{background:var(--orange-h);transform:translateY(-2px);box-shadow:0 12px 30px rgba(255,90,31,.45);}
+.btn-wh{background:#fff;color:var(--dark);}
+.btn-wh:hover{background:#f0f0f0;transform:translateY(-2px);}
+.btn-outline-wh{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);}
+.btn-outline-wh:hover{border-color:#fff;background:rgba(255,255,255,.06);transform:translateY(-2px);}
+.btn-outline-dk{background:transparent;color:var(--dark);border:1.5px solid var(--border);}
+.btn-outline-dk:hover{border-color:var(--dark);transform:translateY(-2px);}
+.btn-lg{padding:18px 36px;font-size:16px;}
+
+/* WA ICON */
+.wa-ico{fill:#fff;}
+
+/* =============================================
+   HEADER
+============================================= */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(14,20,25,0.95);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border-dark);
+}
+.hdr{display:flex;align-items:center;justify-content:space-between;height:72px;}
+
+.logo{display:flex;align-items:center;gap:12px;}
+.logo-icon{
+  width:38px;height:38px;border-radius:10px;
+  background:var(--orange);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.logo-icon svg{width:20px;height:20px;color:#fff;}
+.logo-name{font-size:16px;font-weight:800;color:#fff;letter-spacing:.01em;}
+.logo-tag{font-size:10px;color:rgba(255,255,255,.4);font-weight:500;display:block;margin-top:1px;}
+
+.nav{display:flex;gap:28px;}
+.nav a{font-size:13px;font-weight:600;color:rgba(255,255,255,.65);transition:color .18s;}
+.nav a:hover{color:var(--orange);}
+
+.hdr-right{display:flex;align-items:center;gap:16px;}
+.hdr-phone{
+  font-size:14px;font-weight:700;color:rgba(255,255,255,.85);
+  display:flex;align-items:center;gap:7px;transition:color .18s;
+}
+.hdr-phone:hover{color:var(--orange);}
+.hdr-phone svg{width:14px;height:14px;color:var(--orange);}
+
+.burger{
+  display:none;width:40px;height:40px;border-radius:9px;
+  background:rgba(255,255,255,.08);align-items:center;justify-content:center;
+}
+.burger svg{width:20px;height:20px;color:#fff;}
+
+/* Mobile drawer */
+.drawer{
+  display:none;position:fixed;
+  top:72px;left:0;right:0;bottom:0;
+  background:var(--dark-2);z-index:999;
+  flex-direction:column;padding:32px 24px;gap:4px;
+  transform:translateX(-100%);transition:transform .28s ease;
+}
+.drawer.open{transform:translateX(0);}
+.drawer a{
+  font-size:19px;font-weight:700;color:rgba(255,255,255,.8);
+  padding:14px 0;border-bottom:1px solid var(--border-dark);
+}
+.drawer a:hover{color:var(--orange);}
+.drawer .btn{margin-top:20px;width:100%;}
+
+/* =============================================
+   HERO
+============================================= */
+.hero{
+  min-height:100svh;padding:110px 0 80px;
+  background:var(--dark);
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;
+}
+/* фото-фон с оверлеем */
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600&q=80&auto=format') center/cover no-repeat;
+}
+.hero-bg::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(14,20,25,.92) 50%,rgba(14,20,25,.55) 100%);
+}
+
+.hero-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:64px;align-items:center;
+  position:relative;z-index:1;
+}
+
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,90,31,.15);border:1px solid rgba(255,90,31,.3);
+  border-radius:100px;padding:7px 14px;
+  font-size:12px;font-weight:700;color:var(--orange);
+  margin-bottom:20px;
+}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--orange);animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.35;}}
+
+.hero h1{
+  font-size:clamp(32px,5vw,58px);font-weight:900;
+  letter-spacing:-.025em;line-height:1.05;
+  color:#fff;margin-bottom:18px;
+}
+.hero h1 span{color:var(--orange);}
+
+.hero-bullets{display:flex;flex-direction:column;gap:10px;margin-bottom:32px;}
+.hero-bullet{
+  display:flex;align-items:center;gap:10px;
+  font-size:15px;color:rgba(255,255,255,.75);font-weight:500;
+}
+.hero-bullet svg{width:16px;height:16px;color:var(--orange);flex-shrink:0;}
+
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px;}
+
+.hero-trust{
+  display:flex;gap:28px;flex-wrap:wrap;
+  padding-top:28px;border-top:1px solid rgba(255,255,255,.1);
+}
+.htrust{display:flex;align-items:center;gap:8px;}
+.htrust svg{width:15px;height:15px;color:var(--orange);}
+.htrust span{font-size:13px;color:rgba(255,255,255,.5);font-weight:500;}
+
+/* Hero right — stats card */
+.hero-card{
+  background:rgba(255,255,255,.04);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:var(--r-xl);
+  padding:32px;display:flex;flex-direction:column;gap:4px;
+}
+.hero-card-title{
+  font-size:13px;font-weight:700;color:rgba(255,255,255,.4);
+  text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px;
+}
+.hero-stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.h-stat{padding:18px;background:rgba(255,255,255,.05);border-radius:12px;border:1px solid rgba(255,255,255,.07);}
+.h-stat-num{
+  font-size:32px;font-weight:900;color:#fff;
+  letter-spacing:-.02em;line-height:1;margin-bottom:4px;
+}
+.h-stat-num span{color:var(--orange);}
+.h-stat-label{font-size:12px;color:rgba(255,255,255,.45);font-weight:500;}
+.hero-card-cta{
+  margin-top:8px;padding:14px 18px;
+  background:var(--orange);border-radius:12px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;cursor:pointer;transition:background .2s;
+}
+.hero-card-cta:hover{background:var(--orange-h);}
+.hero-card-cta span{font-size:14px;font-weight:700;color:#fff;}
+.hero-card-cta svg{width:20px;height:20px;color:#fff;flex-shrink:0;}
+
+/* =============================================
+   STATS BAR
+============================================= */
+.stats-bar{
+  background:var(--orange);
+  padding:0;overflow:hidden;
+}
+.stats-inner{
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.stat-item{
+  padding:28px 24px;text-align:center;
+  border-right:1px solid rgba(255,255,255,.2);
+  position:relative;
+}
+.stat-item:last-child{border-right:none;}
+.stat-n{
+  font-size:36px;font-weight:900;color:#fff;
+  letter-spacing:-.02em;line-height:1;margin-bottom:4px;
+}
+.stat-l{font-size:13px;color:rgba(255,255,255,.75);font-weight:600;}
+
+/* =============================================
+   SERVICES
+============================================= */
+.srv-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+.srv-card{
+  background:var(--white);
+  border:1.5px solid var(--border);
+  border-radius:var(--r-lg);
+  padding:24px 20px;
+  transition:all .22s;
+  position:relative;overflow:hidden;
+}
+.srv-card::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:3px;
+  background:var(--orange);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .25s;
+}
+.srv-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-h);border-color:transparent;}
+.srv-card:hover::before{transform:scaleX(1);}
+
+.srv-ico{
+  width:50px;height:50px;border-radius:12px;
+  background:rgba(255,90,31,.1);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:16px;
+}
+.srv-ico svg{width:24px;height:24px;color:var(--orange);}
+.srv-name{font-size:15px;font-weight:700;color:var(--dark);margin-bottom:6px;}
+.srv-desc{font-size:13px;color:var(--muted);line-height:1.55;margin-bottom:14px;}
+.srv-price{
+  font-size:13px;font-weight:800;color:var(--orange);
+  display:flex;align-items:center;gap:6px;
+}
+.srv-price svg{width:14px;height:14px;}
+
+/* =============================================
+   WHY US
+============================================= */
+.why-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:48px;align-items:center;
+}
+.why-list{display:flex;flex-direction:column;gap:16px;}
+.why-item{
+  display:flex;gap:16px;align-items:flex-start;
+  padding:20px 22px;
+  background:var(--white);
+  border:1.5px solid var(--border);
+  border-radius:var(--r-lg);
+  transition:all .2s;
+}
+.why-item:hover{border-color:rgba(255,90,31,.3);box-shadow:0 6px 24px rgba(255,90,31,.08);}
+.why-num{
+  width:36px;height:36px;flex-shrink:0;
+  border-radius:10px;background:rgba(255,90,31,.1);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:900;color:var(--orange);
+}
+.why-body strong{display:block;font-size:15px;font-weight:700;color:var(--dark);margin-bottom:4px;}
+.why-body span{font-size:13px;color:var(--muted);}
+
+.why-visual{position:relative;}
+.why-photo{
+  border-radius:var(--r-xl);overflow:hidden;
+  aspect-ratio:4/5;
+}
+.why-photo img{width:100%;height:100%;object-fit:cover;}
+.why-badge{
+  position:absolute;bottom:-16px;right:-16px;
+  background:var(--orange);border-radius:var(--r-lg);
+  padding:20px 24px;text-align:center;
+  box-shadow:var(--shadow-or);
+}
+.why-badge-n{font-size:28px;font-weight:900;color:#fff;line-height:1;}
+.why-badge-l{font-size:12px;color:rgba(255,255,255,.8);font-weight:600;margin-top:2px;}
+
+/* =============================================
+   HOW IT WORKS
+============================================= */
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative;}
+.steps-grid::before{
+  content:'';position:absolute;
+  top:32px;left:calc(12.5% + 8px);right:calc(12.5% + 8px);
+  height:2px;background:repeating-linear-gradient(90deg,var(--orange) 0,var(--orange) 8px,transparent 8px,transparent 16px);
+  z-index:0;
+}
+.step{text-align:center;position:relative;z-index:1;}
+.step-num{
+  width:64px;height:64px;border-radius:50%;
+  background:var(--dark);
+  border:3px solid var(--orange);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 18px;
+  font-size:22px;font-weight:900;color:var(--orange);
+}
+.step-title{font-size:16px;font-weight:700;color:var(--dark);margin-bottom:8px;}
+.step-desc{font-size:13px;color:var(--muted);line-height:1.6;}
+
+/* =============================================
+   REVIEWS
+============================================= */
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.rev-card{
+  background:var(--white);
+  border:1.5px solid var(--border);
+  border-radius:var(--r-lg);
+  padding:26px;
+  transition:all .22s;
+}
+.rev-card:hover{box-shadow:var(--shadow-h);transform:translateY(-3px);}
+.rev-head{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.rev-ava{
+  width:44px;height:44px;border-radius:50%;flex-shrink:0;
+  background:var(--dark);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:17px;font-weight:800;
+}
+.rev-name{font-size:15px;font-weight:700;color:var(--dark);}
+.rev-car{font-size:12px;color:var(--muted);margin-top:2px;}
+.rev-stars{display:flex;gap:2px;margin-bottom:10px;}
+.rev-stars svg{width:15px;height:15px;fill:#FF8C00;}
+.rev-text{font-size:14px;color:var(--muted);line-height:1.65;}
+.rev-source{
+  margin-top:14px;padding-top:14px;
+  border-top:1px solid var(--border);
+  font-size:12px;color:var(--muted);
+  display:flex;align-items:center;gap:6px;
+}
+.rev-source svg{width:14px;height:14px;color:var(--orange);}
+
+/* =============================================
+   FORM + CONTACTS
+============================================= */
+.form-contacts{
+  display:grid;grid-template-columns:1fr 1.2fr;
+  gap:0;border-radius:var(--r-xl);overflow:hidden;
+  border:1.5px solid var(--border);
+  box-shadow:var(--shadow);
+}
+.form-side{
+  background:var(--dark);padding:52px 48px;
+  display:flex;flex-direction:column;gap:24px;
+}
+.form-side .eyebrow::before{background:var(--orange);}
+.form-side .sec-title{font-size:clamp(22px,2.5vw,30px);color:#fff;}
+
+.form-field{display:flex;flex-direction:column;gap:6px;}
+.form-label{font-size:12px;font-weight:700;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.06em;}
+.form-input{
+  background:rgba(255,255,255,.07);
+  border:1.5px solid rgba(255,255,255,.1);
+  border-radius:var(--r-md);
+  padding:14px 16px;
+  font-size:15px;color:#fff;
+  font-family:inherit;outline:none;
+  transition:border-color .2s;
+}
+.form-input::placeholder{color:rgba(255,255,255,.3);}
+.form-input:focus{border-color:var(--orange);}
+select.form-input option{background:var(--dark-2);color:#fff;}
+
+.form-note{font-size:12px;color:rgba(255,255,255,.3);line-height:1.6;}
+
+/* Contact side */
+.contact-side{
+  background:var(--off-white);
+  padding:52px 44px;
+  display:flex;flex-direction:column;gap:32px;
+}
+.contact-items{display:flex;flex-direction:column;gap:20px;}
+.ci{display:flex;gap:14px;align-items:flex-start;}
+.ci-ico{
+  width:42px;height:42px;flex-shrink:0;
+  border-radius:11px;background:rgba(255,90,31,.1);
+  display:flex;align-items:center;justify-content:center;
+}
+.ci-ico svg{width:19px;height:19px;color:var(--orange);}
+.ci-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:3px;}
+.ci-val{font-size:15px;font-weight:600;color:var(--dark);}
+.ci-val a{color:var(--dark);transition:color .2s;}
+.ci-val a:hover{color:var(--orange);}
+
+.contact-map{
+  border-radius:var(--r-lg);overflow:hidden;flex:1;min-height:180px;
+  background:var(--border);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:10px;padding:24px;text-align:center;
+}
+.contact-map svg{width:36px;height:36px;color:var(--orange);}
+.contact-map p{font-size:14px;font-weight:700;color:var(--dark);}
+.contact-map span{font-size:13px;color:var(--muted);}
+.map-btn{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:10px 18px;border-radius:100px;
+  background:var(--dark);color:#fff;
+  font-size:13px;font-weight:700;transition:all .2s;
+}
+.map-btn:hover{background:var(--dark-3);transform:translateY(-1px);}
+.map-btn svg{width:14px;height:14px;}
+
+/* =============================================
+   FOOTER
+============================================= */
+.footer{
+  background:var(--dark);
+  border-top:1px solid var(--border-dark);
+  padding:32px 0;
+}
+.footer-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:16px;
+}
+.footer-copy{font-size:13px;color:rgba(255,255,255,.3);}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{font-size:13px;color:rgba(255,255,255,.3);transition:color .18s;}
+.footer-links a:hover{color:var(--orange);}
+
+/* =============================================
+   STICKY WA BUTTON (mobile)
+============================================= */
+.wa-sticky{
+  display:none;
+  position:fixed;bottom:0;left:0;right:0;z-index:998;
+  background:rgba(14,20,25,.96);backdrop-filter:blur(10px);
+  border-top:1px solid var(--border-dark);
+  padding:10px 16px;
+}
+.wa-sticky .btn{width:100%;justify-content:center;}
+
+/* =============================================
+   RESPONSIVE
+============================================= */
+@media(max-width:1024px){
+  :root{--sec:64px;}
+  .nav{display:none;}
+  .hdr-phone{display:none;}
+  .burger{display:flex;}
+  .hero-grid{grid-template-columns:1fr;gap:40px;}
+  .hero-card{max-width:480px;margin:0 auto;}
+  .stats-inner{grid-template-columns:repeat(2,1fr);}
+  .stat-item:nth-child(2){border-right:none;}
+  .stat-item:nth-child(3){border-top:1px solid rgba(255,255,255,.2);}
+  .stat-item:nth-child(4){border-top:1px solid rgba(255,255,255,.2);}
+  .srv-grid{grid-template-columns:repeat(2,1fr);}
+  .why-grid{grid-template-columns:1fr;gap:36px;}
+  .why-visual{max-width:360px;}
+  .steps-grid{grid-template-columns:repeat(2,1fr);gap:24px;}
+  .steps-grid::before{display:none;}
+  .reviews-grid{grid-template-columns:1fr;}
+  .form-contacts{grid-template-columns:1fr;}
+  .form-side{padding:36px 28px;}
+  .contact-side{padding:36px 28px;}
+  .wa-sticky{display:block;}
+  body{padding-bottom:68px;}
+}
+@media(max-width:600px){
+  .container{padding:0 16px;}
+  .hero{padding:90px 0 60px;}
+  .hero h1{font-size:30px;}
+  .hero-actions .btn{width:100%;justify-content:center;}
+  .hero-stats-grid{grid-template-columns:1fr 1fr;}
+  .srv-grid{grid-template-columns:1fr;}
+  .steps-grid{grid-template-columns:1fr;}
+  .footer-inner{flex-direction:column;text-align:center;}
+  .footer-links{justify-content:center;}
+  .why-badge{right:0;bottom:-12px;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container hdr">
+    <a href="#" class="logo">
+      <span class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/>
+        </svg>
+      </span>
+      <span>
+        <span class="logo-name">[НАЗВАНИЕ СЕРВИСА]</span>
+        <span class="logo-tag">Автосервис · Астана</span>
+      </span>
+    </a>
+
+    <nav class="nav">
+      <a href="#services">Услуги</a>
+      <a href="#why">Почему мы</a>
+      <a href="#process">Как работаем</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+
+    <div class="hdr-right">
+      <a href="tel:+7XXXXXXXXXX" class="hdr-phone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012.22 0h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+        +7 (XXX) XXX-XX-XX
+      </a>
+      <a href="https://wa.me/7XXXXXXXXXX?text=Здравствуйте! Хочу записаться на сервис" target="_blank" class="btn btn-or" style="padding:10px 18px;font-size:13px;">
+        <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.78.47 3.45 1.3 4.9L2 22l5.2-1.27C8.6 21.5 10.25 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.07 13.44c-.22-.11-1.31-.65-1.51-.72-.2-.07-.35-.11-.5.11-.15.22-.57.72-.7.87-.13.15-.26.17-.48.06-1.27-.63-2.1-1.13-2.94-2.56-.22-.38.22-.35.63-1.17.07-.15.04-.28-.02-.39-.06-.11-.5-1.2-.68-1.64-.18-.43-.37-.37-.5-.38h-.43c-.15 0-.39.06-.6.28-.2.22-.78.76-.78 1.85s.8 2.15.91 2.3c.11.15 1.57 2.39 3.8 3.36.53.23.94.37 1.26.47.53.17 1.01.15 1.39.09.42-.07 1.31-.54 1.49-1.06.18-.52.18-.97.13-1.06-.05-.08-.2-.13-.42-.24z"/></svg>
+        WhatsApp
+      </a>
+      <button class="burger" id="burgerBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<nav class="drawer" id="drawer">
+  <a href="#services" onclick="closeDrawer()">Услуги и цены</a>
+  <a href="#why" onclick="closeDrawer()">Почему мы</a>
+  <a href="#process" onclick="closeDrawer()">Как работаем</a>
+  <a href="#reviews" onclick="closeDrawer()">Отзывы</a>
+  <a href="#contacts" onclick="closeDrawer()">Контакты</a>
+  <a href="https://wa.me/7XXXXXXXXXX" target="_blank" class="btn btn-or" style="margin-top:20px;width:100%;justify-content:center;">
+    Записаться в WhatsApp
+  </a>
+</nav>
+
+<!-- =============================================
+     HERO
+============================================= -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="container hero-grid">
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-dot"></span>
+        Принимаем без записи · Пн–Вс [ЧЧ:ЧЧ]–[ЧЧ:ЧЧ]
+      </div>
+
+      <h1>Ремонт авто<br>в <span>Астана</span><br>быстро и честно</h1>
+
+      <div class="hero-bullets">
+        <div class="hero-bullet">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+          Диагностика — [ЦЕНА] ₸ или бесплатно при ремонте
+        </div>
+        <div class="hero-bullet">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+          Гарантия на работы — до [XX] месяцев
+        </div>
+        <div class="hero-bullet">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+          Запчасти в наличии — без ожидания
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="https://wa.me/7XXXXXXXXXX?text=Хочу записаться на ремонт" target="_blank" class="btn btn-or btn-lg">
+          <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.78.47 3.45 1.3 4.9L2 22l5.2-1.27C8.6 21.5 10.25 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.07 13.44c-.22-.11-1.31-.65-1.51-.72-.2-.07-.35-.11-.5.11-.15.22-.57.72-.7.87-.13.15-.26.17-.48.06-1.27-.63-2.1-1.13-2.94-2.56-.22-.38.22-.35.63-1.17.07-.15.04-.28-.02-.39-.06-.11-.5-1.2-.68-1.64-.18-.43-.37-.37-.5-.38h-.43c-.15 0-.39.06-.6.28-.2.22-.78.76-.78 1.85s.8 2.15.91 2.3c.11.15 1.57 2.39 3.8 3.36.53.23.94.37 1.26.47.53.17 1.01.15 1.39.09.42-.07 1.31-.54 1.49-1.06.18-.52.18-.97.13-1.06-.05-.08-.2-.13-.42-.24z"/></svg>
+          Записаться в WhatsApp
+        </a>
+        <a href="tel:+7XXXXXXXXXX" class="btn btn-outline-wh btn-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5 19.79 19.79 0 01.22.82 2 2 0 012.22-1h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+          Позвонить
+        </a>
+      </div>
+
+      <div class="hero-trust">
+        <div class="htrust">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L14.9 8.3 22 9l-5.5 4.6 1.7 7L12 17l-6.2 3.6 1.7-7L2 9l7.1-.7L12 2z"/></svg>
+          <span>4.9 на 2ГИС</span>
+        </div>
+        <div class="htrust">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          <span>[XX]+ лет на рынке</span>
+        </div>
+        <div class="htrust">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+          <span>Без выходных</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats card -->
+    <div class="hero-card">
+      <div class="hero-card-title">Нас в цифрах</div>
+      <div class="hero-stats-grid">
+        <div class="h-stat">
+          <div class="h-stat-num"><span>[XX]</span></div>
+          <div class="h-stat-label">лет на рынке</div>
+        </div>
+        <div class="h-stat">
+          <div class="h-stat-num"><span>[XX]</span>+</div>
+          <div class="h-stat-label">мастеров</div>
+        </div>
+        <div class="h-stat">
+          <div class="h-stat-num"><span>[XXXX]</span>+</div>
+          <div class="h-stat-label">клиентов</div>
+        </div>
+        <div class="h-stat">
+          <div class="h-stat-num"><span>[XX]</span></div>
+          <div class="h-stat-label">мес. гарантии</div>
+        </div>
+      </div>
+      <a href="https://wa.me/7XXXXXXXXXX?text=Хочу записаться на диагностику" target="_blank" class="hero-card-cta">
+        <span>Записаться на диагностику</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-n">[XX]+</div>
+        <div class="stat-l">лет на рынке</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n">[XX]+</div>
+        <div class="stat-l">опытных мастеров</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n">[XXXX]+</div>
+        <div class="stat-l">довольных клиентов</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n">[XX] мес</div>
+        <div class="stat-l">гарантия на работы</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================================
+     УСЛУГИ
+============================================= -->
+<section class="sec sec-soft" id="services">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Наши услуги</span>
+      <h2 class="sec-title">Полный цикл ремонта<br>в одном сервисе</h2>
+      <p class="sec-sub">Работаем с автомобилями всех марок и моделей. Запчасти в наличии — ждать не придётся.</p>
+    </div>
+
+    <div class="srv-grid">
+
+      <div class="srv-card">
+        <div class="srv-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </div>
+        <div class="srv-name">Диагностика</div>
+        <div class="srv-desc">Компьютерная диагностика всех систем. Выявляем скрытые неисправности.</div>
+        <div class="srv-price">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+          от [ЦЕНА] ₸
+        </div>
+      </div>
+
+      <div class="srv-card">
+        <div class="srv-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div class="srv-name">Замена масла и ТО</div>
+        <div class="srv-desc">Замена масла, фильтров, жидкостей. Плановое техобслуживание по регламенту.</div>
+        <div class="srv-price">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+          от [ЦЕНА] ₸
+        </div>
+      </div>
+
+      <div class="srv-card">
+        <div class="srv-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2M12 12v4"/></svg>
+        </div>
+        <div class="srv-name">Ремонт двигателя</div>
+        <div class="srv-desc">Капитальный ремонт, замена ГРМ, прокладки ГБЦ, сальников.</div>
+        <div class="srv-price">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+          от [ЦЕНА] ₸
+        </div>
+      </div>
+
+      <div class="srv-card">
+        <div class="srv-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg>
+        </div>
+        <div class="srv-name">Ремонт ходовой</div>
+        <div class="srv-desc">Замена стоек, рычагов, сайлентблоков, шаровых опор, рулевых тяг.</div>
+        <div class="srv-price">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+          от [ЦЕНА] ₸
+        </div>
+      </div>
+
+      <div class="srv-card">
+        <div class="srv-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="srv-name">Тормозная система</div>
+        <div class="srv-desc">Замена колодок, дисков, барабанов. Прокачка тормозов.</div>
+        <div class="srv-price">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+          от [ЦЕНА] ₸
+        </div>
+      </div>
+
+      <div class="srv-card">
+        <div class="srv-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="7" width="18" height="10" rx="2"/><path d="M7 7V5h10v2"/><path d="M12 11v2"/></svg>
+        </div>
+        <div class="srv-name">Ремонт АКПП / МКПП</div>
+        <div class="srv-desc">Диагностика и ремонт автоматических и механических коробок передач.</div>
+        <div class="srv-price">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+          от [ЦЕНА] ₸
+        </div>
+      </div>
+
+      <div class="srv-card">
+        <div class="srv-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div class="srv-name">Электрика / Автоэлектрик</div>
+        <div class="srv-desc">Поиск и устранение неисправностей электропроводки, ЭБУ, датчиков.</div>
+        <div class="srv-price">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+          от [ЦЕНА] ₸
+        </div>
+      </div>
+
+      <div class="srv-card">
+        <div class="srv-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
+        </div>
+        <div class="srv-name">Шиномонтаж и развал</div>
+        <div class="srv-desc">Монтаж/демонтаж шин, балансировка, регулировка развал-схождения.</div>
+        <div class="srv-price">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
+          от [ЦЕНА] ₸
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:36px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://wa.me/7XXXXXXXXXX?text=Хочу узнать стоимость ремонта" target="_blank" class="btn btn-or">
+        <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.78.47 3.45 1.3 4.9L2 22l5.2-1.27C8.6 21.5 10.25 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.07 13.44c-.22-.11-1.31-.65-1.51-.72-.2-.07-.35-.11-.5.11-.15.22-.57.72-.7.87-.13.15-.26.17-.48.06-1.27-.63-2.1-1.13-2.94-2.56-.22-.38.22-.35.63-1.17.07-.15.04-.28-.02-.39-.06-.11-.5-1.2-.68-1.64-.18-.43-.37-.37-.5-.38h-.43c-.15 0-.39.06-.6.28-.2.22-.78.76-.78 1.85s.8 2.15.91 2.3c.11.15 1.57 2.39 3.8 3.36.53.23.94.37 1.26.47.53.17 1.01.15 1.39.09.42-.07 1.31-.54 1.49-1.06.18-.52.18-.97.13-1.06-.05-.08-.2-.13-.42-.24z"/></svg>
+        Узнать стоимость
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     ПОЧЕМУ МЫ
+============================================= -->
+<section class="sec" id="why">
+  <div class="container why-grid">
+
+    <div>
+      <span class="eyebrow">Почему выбирают нас</span>
+      <h2 class="sec-title">[XXXX]+ клиентов<br>доверяют нам своё авто</h2>
+      <p class="sec-sub" style="margin-bottom:32px;">Мы не просто ремонтируем — мы несём ответственность за каждый болт.</p>
+
+      <div class="why-list">
+        <div class="why-item">
+          <div class="why-num">01</div>
+          <div class="why-body">
+            <strong>Гарантия [XX] месяцев</strong>
+            <span>На все выполненные работы и установленные запчасти</span>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">02</div>
+          <div class="why-body">
+            <strong>Запчасти в наличии</strong>
+            <span>Собственный склад — не ждёте доставки, ремонт день в день</span>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">03</div>
+          <div class="why-body">
+            <strong>Фиксированная цена</strong>
+            <span>Называем стоимость до ремонта — никаких сюрпризов в счёте</span>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">04</div>
+          <div class="why-body">
+            <strong>Современное оборудование</strong>
+            <span>Диагностика на сканерах [БРЕНД], работаем с любыми марками</span>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">05</div>
+          <div class="why-body">
+            <strong>Работаем без выходных</strong>
+            <span>Пн–Вс с [ЧЧ:ЧЧ] до [ЧЧ:ЧЧ], принимаем без предварительной записи</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-visual">
+      <div class="why-photo">
+        <img src="https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=700&q=80&auto=format" alt="Мастер за работой">
+      </div>
+      <div class="why-badge">
+        <div class="why-badge-n">[XX]+</div>
+        <div class="why-badge-l">лет опыта</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =============================================
+     КАК МЫ РАБОТАЕМ
+============================================= -->
+<section class="sec sec-dark" id="process">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Как мы работаем</span>
+      <h2 class="sec-title wh">4 шага — и ваш автомобиль<br>как новый</h2>
+      <p class="sec-sub wh">Простой и прозрачный процесс без сюрпризов</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-title" style="color:#fff;">Диагностика</div>
+        <div class="step-desc" style="color:rgba(255,255,255,.5);">Принимаем авто, проводим полную компьютерную диагностику и осмотр. Определяем все неисправности.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-title" style="color:#fff;">Согласование</div>
+        <div class="step-desc" style="color:rgba(255,255,255,.5);">Объясняем что нашли, называем точную стоимость и сроки. Работы — только после вашего согласия.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-title" style="color:#fff;">Ремонт</div>
+        <div class="step-desc" style="color:rgba(255,255,255,.5);">Выполняем работы в согласованные сроки. Используем только оригинальные или сертифицированные запчасти.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-title" style="color:#fff;">Выдача</div>
+        <div class="step-desc" style="color:rgba(255,255,255,.5);">Проверяем результат, выдаём автомобиль и гарантийный талон. Даём рекомендации по дальнейшей эксплуатации.</div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:48px;">
+      <a href="https://wa.me/7XXXXXXXXXX?text=Хочу записаться на диагностику" target="_blank" class="btn btn-or btn-lg">
+        <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.78.47 3.45 1.3 4.9L2 22l5.2-1.27C8.6 21.5 10.25 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.07 13.44c-.22-.11-1.31-.65-1.51-.72-.2-.07-.35-.11-.5.11-.15.22-.57.72-.7.87-.13.15-.26.17-.48.06-1.27-.63-2.1-1.13-2.94-2.56-.22-.38.22-.35.63-1.17.07-.15.04-.28-.02-.39-.06-.11-.5-1.2-.68-1.64-.18-.43-.37-.37-.5-.38h-.43c-.15 0-.39.06-.6.28-.2.22-.78.76-.78 1.85s.8 2.15.91 2.3c.11.15 1.57 2.39 3.8 3.36.53.23.94.37 1.26.47.53.17 1.01.15 1.39.09.42-.07 1.31-.54 1.49-1.06.18-.52.18-.97.13-1.06-.05-.08-.2-.13-.42-.24z"/></svg>
+        Записаться на диагностику
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     ОТЗЫВЫ
+============================================= -->
+<section class="sec sec-soft" id="reviews">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Отзывы клиентов</span>
+      <h2 class="sec-title">Нам доверяют<br>реальные люди</h2>
+      <p class="sec-sub">Отзывы с 2ГИС и Google</p>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="rev-card">
+        <div class="rev-head">
+          <div class="rev-ava" style="background:#1a3a5c;">А</div>
+          <div>
+            <div class="rev-name">[Имя Фамилия]</div>
+            <div class="rev-car">[Марка и модель авто]</div>
+          </div>
+        </div>
+        <div class="rev-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3L22 9l-5.5 4.6 1.7 7L12 17l-6.2 3.6 1.7-7L2 9l7.1-.7L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3L22 9l-5.5 4.6 1.7 7L12 17l-6.2 3.6 1.7-7L2 9l7.1-.7L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3L22 9l-5.5 4.6 1.7 7L12 17l-6.2 3.6 1.7-7L2 9l7.1-.7L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3L22 9l-5.5 4.6 1.7 7L12 17l-6.2 3.6 1.7-7L2 9l7.1-.7L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3L22 9l-5.5 4.6 1.7 7L12 17l-6.2 3.6 1.7-7L2 9l7.1-.7L12 2z"/></svg>
+        </div>
+        <p class="rev-text">[Текст отзыва клиента]</p>
+        <div class="rev-source">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3L22 9l-5.5 4.6 1.7 7L12 17l-6.2 3.6 1.7-7L2 9l7.1-.7L12 2z"/></svg>
+          2ГИС · [месяц год]
+        </div>
+      </div>
+
+      <div class="rev-card">
+        <div class="rev-head">
+          <div class="rev-ava" style="background:#1a4a2e;">Б</div>
+          <div>
+            <div class="rev-name">[Имя Фамилия]</div>
+            <div class="rev-car">[Марка и модель авто]</div>
+          </div>
+        </div>
+        <div class="rev-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3L22 9l-5.5 4.6 1.7 7L12 17l-6.2 3.6 1.7-7L2 9l7.1-.7L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3L22 9l-5.5 4.6 1.7 7L12 17l-6.2 3.6 1.7-7L2 9l7.1-.7L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3L22 9l-5.5 4.6 1.7 7L12 17l-6.2 3.6 1.7-7L2 9l7.1-.7L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3L22 9l-5.5 4.6 1.7 7L12 17l-6.2 3.6 1.7-7L2 9l7.1-.7L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3L22 9l-5.5 4.6 1.7 7L12 17l-6.2 3.6 1.7-7L2 9l7.1-.7L12 2z"/></svg>
+        </div>
+        <p class="rev-text">[Текст отзыва клиента]</p>
+        <div class="rev-source">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3L22 9l-5.5 4.6 1.7 7L12 17l-6.2 3.6 1.7-7L2 9l7.1-.7L12 2z"/></svg>
+          2ГИС · [месяц год]
+        </div>
+      </div>
+
+      <div class="rev-card">
+        <div class="rev-head">
+          <div class="rev-ava" style="background:#3a1a1a;">В</div>
+          <div>
+            <div class="rev-name">[Имя Фамилия]</div>
+            <div class="rev-car">[Марка и модель авто]</div>
+          </div>
+        </div>
+        <div class="rev-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3L22 9l-5.5 4.6 1.7 7L12 17l-6.2 3.6 1.7-7L2 9l7.1-.7L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3L22 9l-5.5 4.6 1.7 7L12 17l-6.2 3.6 1.7-7L2 9l7.1-.7L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3L22 9l-5.5 4.6 1.7 7L12 17l-6.2 3.6 1.7-7L2 9l7.1-.7L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3L22 9l-5.5 4.6 1.7 7L12 17l-6.2 3.6 1.7-7L2 9l7.1-.7L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3L22 9l-5.5 4.6 1.7 7L12 17l-6.2 3.6 1.7-7L2 9l7.1-.7L12 2z"/></svg>
+        </div>
+        <p class="rev-text">[Текст отзыва клиента]</p>
+        <div class="rev-source">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3L22 9l-5.5 4.6 1.7 7L12 17l-6.2 3.6 1.7-7L2 9l7.1-.7L12 2z"/></svg>
+          2ГИС · [месяц год]
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     ФОРМА + КОНТАКТЫ
+============================================= -->
+<section class="sec" id="contacts">
+  <div class="container">
+    <div class="sec-head" style="margin-bottom:48px;">
+      <span class="eyebrow">Запись и контакты</span>
+      <h2 class="sec-title">Запишитесь прямо сейчас</h2>
+    </div>
+
+    <div class="form-contacts">
+      <!-- ФОРМА -->
+      <div class="form-side">
+        <div>
+          <span class="eyebrow">Онлайн-запись</span>
+          <h3 class="sec-title" style="font-size:clamp(20px,2.4vw,28px);color:#fff;margin-bottom:6px;">Оставьте заявку</h3>
+          <p style="font-size:14px;color:rgba(255,255,255,.45);margin-bottom:0;"></p>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label">Ваше имя</label>
+          <input class="form-input" type="text" placeholder="[Имя]">
+        </div>
+        <div class="form-field">
+          <label class="form-label">Телефон</label>
+          <input class="form-input" type="tel" placeholder="+7 (___) ___-__-__">
+        </div>
+        <div class="form-field">
+          <label class="form-label">Марка и модель авто</label>
+          <input class="form-input" type="text" placeholder="Toyota Camry, 2018">
+        </div>
+        <div class="form-field">
+          <label class="form-label">Что беспокоит?</label>
+          <select class="form-input">
+            <option value="">Выберите услугу</option>
+            <option>Диагностика</option>
+            <option>Замена масла / ТО</option>
+            <option>Ремонт двигателя</option>
+            <option>Ремонт ходовой</option>
+            <option>Тормозная система</option>
+            <option>Ремонт АКПП / МКПП</option>
+            <option>Электрика</option>
+            <option>Шиномонтаж / развал</option>
+            <option>Другое</option>
+          </select>
+        </div>
+
+        <button class="btn btn-or" style="width:100%;justify-content:center;padding:17px;" onclick="sendForm()">
+          Отправить заявку →
+        </button>
+        <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных. Ваши данные не передаются третьим лицам.</p>
+      </div>
+
+      <!-- КОНТАКТЫ -->
+      <div class="contact-side">
+        <div>
+          <span class="eyebrow">Контакты</span>
+          <h3 class="sec-title" style="font-size:clamp(20px,2.4vw,28px);margin-bottom:24px;">[НАЗВАНИЕ СЕРВИСА]</h3>
+        </div>
+
+        <div class="contact-items">
+          <div class="ci">
+            <span class="ci-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <div>
+              <div class="ci-label">Адрес</div>
+              <div class="ci-val">[Полный адрес сервиса]<br>[Ориентир / как найти]</div>
+            </div>
+          </div>
+          <div class="ci">
+            <span class="ci-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5 19.79 19.79 0 01.22.82 2 2 0 012.22-1h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+            </span>
+            <div>
+              <div class="ci-label">Телефон / WhatsApp</div>
+              <div class="ci-val"><a href="tel:+7XXXXXXXXXX">+7 (XXX) XXX-XX-XX</a></div>
+            </div>
+          </div>
+          <div class="ci">
+            <span class="ci-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+            </span>
+            <div>
+              <div class="ci-label">Режим работы</div>
+              <div class="ci-val">Пн–Вс: [ЧЧ:ЧЧ]–[ЧЧ:ЧЧ]<br>Без выходных / [или указать выходной]</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2GIS placeholder -->
+        <div class="contact-map">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <p>[НАЗВАНИЕ СЕРВИСА] на 2ГИС</p>
+          <span>[Полный адрес сервиса]</span>
+          <a href="https://2gis.kz" target="_blank" class="map-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            Открыть на 2ГИС
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <span class="footer-copy">© 2026 [НАЗВАНИЕ СЕРВИСА]. Все права защищены. Астана, Казахстан</span>
+    <div class="footer-links">
+      <a href="#services">Услуги</a>
+      <a href="#why">О нас</a>
+      <a href="#contacts">Контакты</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Sticky WA (mobile) -->
+<div class="wa-sticky">
+  <a href="https://wa.me/7XXXXXXXXXX?text=Хочу записаться на сервис" target="_blank" class="btn btn-or">
+    <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.78.47 3.45 1.3 4.9L2 22l5.2-1.27C8.6 21.5 10.25 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.07 13.44c-.22-.11-1.31-.65-1.51-.72-.2-.07-.35-.11-.5.11-.15.22-.57.72-.7.87-.13.15-.26.17-.48.06-1.27-.63-2.1-1.13-2.94-2.56-.22-.38.22-.35.63-1.17.07-.15.04-.28-.02-.39-.06-.11-.5-1.2-.68-1.64-.18-.43-.37-.37-.5-.38h-.43c-.15 0-.39.06-.6.28-.2.22-.78.76-.78 1.85s.8 2.15.91 2.3c.11.15 1.57 2.39 3.8 3.36.53.23.94.37 1.26.47.53.17 1.01.15 1.39.09.42-.07 1.31-.54 1.49-1.06.18-.52.18-.97.13-1.06-.05-.08-.2-.13-.42-.24z"/></svg>
+    Записаться в WhatsApp
+  </a>
+</div>
+
+<script>
+// Burger
+document.getElementById('burgerBtn').addEventListener('click',()=>{
+  document.getElementById('drawer').classList.toggle('open');
+});
+function closeDrawer(){document.getElementById('drawer').classList.remove('open');}
+
+// Form → WA
+function sendForm(){
+  const name = document.querySelector('input[placeholder="[Имя]"]').value || '[Имя не указан]';
+  const phone = document.querySelector('input[type="tel"]').value || '[Телефон не указан]';
+  const car = document.querySelector('input[placeholder="Toyota Camry, 2018"]').value || '[Авто не указано]';
+  const service = document.querySelector('select').value || 'Не выбрано';
+  const msg = encodeURIComponent(`Заявка с сайта\nИмя: ${name}\nТел: ${phone}\nАвто: ${car}\nУслуга: ${service}`);
+  window.open(`https://wa.me/7XXXXXXXXXX?text=${msg}`, '_blank');
+}
+</script>
+</body>
+</html>
